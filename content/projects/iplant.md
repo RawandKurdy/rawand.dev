@@ -4,6 +4,5 @@ title: "iPlant: Android application used to track plant growth/development and t
 date: "2018-04-01"
 
 links:
-    website: 'https://github.com/RawandKurdy/iPlant'
-    alias: 'code'
+    code: 'https://github.com/RawandKurdy/iPlant'
 ---
