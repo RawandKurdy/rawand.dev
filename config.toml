@@ -10,6 +10,9 @@ languageCode = "en-us"
 # for using avicenna you need to set the `themes` to 'avicenna'
 theme = "avicenna"
 
+# This is your page title, it appears in your tab
+title = "Rawand Farhad - Software Engineer"
+
 # number of posts to show on the blog page
 paginate = 10
 
@@ -18,9 +21,6 @@ paginate = 10
 endLevel = 3
 ordered = false
 startLevel = 1
-
-# This is your page title, it appears in your tab
-title = "Rawand Farhad - Software Engineer"
 
 [params]
 # it is used for the copy-right section of your page
