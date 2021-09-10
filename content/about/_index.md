@@ -7,6 +7,7 @@ headless: true
 full_name: "Rawand Farhad"
 profile_picture: "profile.png"
 cv: "RawandFarhad_CV.pdf"
+blog: false
 
 socials:
     twitter: "RawandKurdy"

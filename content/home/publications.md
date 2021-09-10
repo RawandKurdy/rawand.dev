@@ -2,9 +2,8 @@
 title: "Publications"
 date: 2020-10-20T18:55:12+03:30
 headless: true
-weight: 1
+weight: 3
 content_type: 'publications'
-draft: true # ?
 
 section_settings:
     show_section: false
@@ -12,5 +11,4 @@ section_settings:
     subtitle: ''
 ---
 
-ADDING NEW PUBLICATIONS
-> USE home/publications.md and make your changes there!
+home/publications.md

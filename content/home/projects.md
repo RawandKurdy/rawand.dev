@@ -2,7 +2,7 @@
 title: "Projects"
 date: 2020-10-20T18:55:12+03:30
 headless: true
-weight: 2
+weight: 4
 content_type: "projects"
 
 section_settings:
@@ -11,5 +11,4 @@ section_settings:
     subtitle: 'For more details please check my LinkedIn :)'
 ---
 
-ADDING NEW PROJECTS
-> USE home/projects.md and make your changes there!
+home/projects.md
