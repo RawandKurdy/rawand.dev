@@ -23,10 +23,6 @@ interests:
 
 affiliations:
     - affiliation:
-        title: "Assistant Programmer"
-        name: "University of Human Development"
-        email: "rawand.farhad@uhd.edu.iq"
-    - affiliation:
         title: "Software Engineer"
         name: "Freelancer"
         email: "me@rawand.dev"
