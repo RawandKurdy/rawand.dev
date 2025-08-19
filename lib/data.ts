@@ -118,5 +118,17 @@ export const projects = [
     image: "",
     date: "2018-06-01",
   },
+  {
+    title: "iPlant - Plant Growth Tracker",
+    description:
+      "Android application for tracking plant growth and development with beautiful UI. Extendable with plant identification and care recommendations.",
+    technologies: ["Java", "Android SDK", "SQLite", "Material Design"],
+    type: "Mobile App",
+    links: {
+      code: "https://github.com/RawandKurdy/iPlant",
+    },
+    image: "",
+    date: "2018-04-01",
+  },
 ]
 
