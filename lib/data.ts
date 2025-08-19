@@ -177,3 +177,11 @@ export const socialLinks = [
   },
 ]
 
+export const siteConfig = {
+  copyright: `Copyright ©${new Date().getFullYear()} Rawand Farhad`,
+  createdWith: null,
+  // createdWith: {
+  //   name: "",
+  //   url: "",
+  // },
+}

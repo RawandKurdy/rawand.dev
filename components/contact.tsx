@@ -217,15 +217,22 @@ export function Contact() {
           className="text-center mt-16 pt-8 border-t border-border"
         >
           <p className="text-muted-foreground">
-            {siteConfig.copyright}, created by{" "}
-            <a
-              href={siteConfig.createdBy.url}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="text-primary hover:text-primary/80 transition-colors"
-            >
-              {siteConfig.createdBy.name}
-            </a>
+            {siteConfig.copyright}     
+            {siteConfig.createdWith &&
+              <>
+                <>
+                  ,created by {" "}
+                </>
+                <a
+                  href={siteConfig.createdWith.url}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="text-primary hover:text-primary/80 transition-colors"
+                >
+                  {siteConfig.createdWith.name}
+                </a>
+              </>
+            }
           </p>
         </motion.div>
       </div>
