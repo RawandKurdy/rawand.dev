@@ -3,6 +3,7 @@
 import type React from "react"
 import { useState, useEffect, useRef } from "react"
 import { TerminalCommandParser } from "@/lib/terminal-commands"
+import { useTheme } from "@/lib/theme-context"
 
 interface TerminalLine {
   type: "input" | "output" | "error"
@@ -11,6 +12,8 @@ interface TerminalLine {
 }
 
 export default function Terminal({ onExit }: { onExit: () => void }) {
+  const { theme } = useTheme()
+
   const [terminalStartTime] = useState(() => Date.now())
 
   const [lines, setLines] = useState<TerminalLine[]>([
@@ -156,19 +159,81 @@ export default function Terminal({ onExit }: { onExit: () => void }) {
     }
   }
 
+  const getThemeStyles = () => {
+    switch (theme) {
+      case "light":
+        return {
+          bg: "bg-gray-50",
+          text: "text-gray-900",
+          prompt: "text-blue-600",
+          header: "bg-white border-gray-200",
+          headerText: "text-gray-700",
+          output: "text-gray-800",
+          error: "text-red-600",
+          cursor: "text-blue-600",
+        }
+      case "classic":
+        return {
+          bg: "bg-amber-50",
+          text: "text-amber-900",
+          prompt: "text-amber-700",
+          header: "bg-amber-100 border-amber-200",
+          headerText: "text-amber-800",
+          output: "text-amber-800",
+          error: "text-red-700",
+          cursor: "text-amber-700",
+        }
+      case "xp":
+        return {
+          bg: "bg-blue-50",
+          text: "text-blue-900",
+          prompt: "text-blue-700",
+          header: "bg-gradient-to-r from-blue-500 to-blue-600 border-blue-400",
+          headerText: "text-white",
+          output: "text-blue-800",
+          error: "text-red-600",
+          cursor: "text-blue-700",
+        }
+      case "macos":
+        return {
+          bg: "bg-gray-100",
+          text: "text-gray-900",
+          prompt: "text-blue-600",
+          header: "bg-gray-200/80 backdrop-blur-md border-gray-300",
+          headerText: "text-gray-700",
+          output: "text-gray-800",
+          error: "text-red-500",
+          cursor: "text-blue-600",
+        }
+      default: // dark
+        return {
+          bg: "bg-black",
+          text: "text-green-400",
+          prompt: "text-green-400",
+          header: "bg-gray-800 border-gray-600",
+          headerText: "text-gray-300",
+          output: "text-gray-100",
+          error: "text-red-400",
+          cursor: "text-green-400",
+        }
+    }
+  }
+
+  const themeStyles = getThemeStyles()
+
   return (
-    <div className="fixed inset-0 bg-black text-green-400 font-mono text-sm overflow-hidden">
+    <div className={`fixed inset-0 ${themeStyles.bg} ${themeStyles.text} font-mono text-sm overflow-hidden`}>
       {/* Terminal Header */}
-      <div className="bg-gray-800 border-b border-gray-600 px-4 py-2 flex items-center justify-between">
+      <div className={`${themeStyles.header} px-4 py-2 flex items-center justify-between`}>
         <div className="flex items-center space-x-2">
           <div className="flex space-x-1">
             <div className="w-3 h-3 rounded-full bg-red-500"></div>
             <div className="w-3 h-3 rounded-full bg-yellow-500"></div>
             <div className="w-3 h-3 rounded-full bg-green-500"></div>
           </div>
-          <span className="text-gray-300 text-xs">user@rawand.dev: ~</span>
+          <span className={`${themeStyles.headerText} text-xs`}>user@rawand.dev: ~</span>
         </div>
-        <button onClick={onExit} className="text-gray-400 hover:text-white text-xs px-2 py-1 rounded">
+        <button onClick={onExit} className={`${themeStyles.headerText} hover:opacity-80 text-xs px-2 py-1 rounded`}>
           Exit Terminal
         </button>
       </div>
@@ -177,26 +242,27 @@ export default function Terminal({ onExit }: { onExit: () => void }) {
       <div ref={terminalRef} className="h-full overflow-y-auto p-4 pb-20" onClick={() => inputRef.current?.focus()}>
         {lines.map((line, index) => (
           <div key={index} className="whitespace-pre-wrap">
-            {line.type === "input" && <span className="text-green-400">{line.content}</span>}
-            {line.type === "output" && <span className="text-gray-100">{line.content}</span>}
-            {line.type === "error" && <span className="text-red-400">{line.content}</span>}
+            {line.type === "input" && <span className={themeStyles.prompt}>{line.content}</span>}
+            {line.type === "output" && <span className={themeStyles.output}>{line.content}</span>}
+            {line.type === "error" && <span className={themeStyles.error}>{line.content}</span>}
           </div>
         ))}
 
         {/* Current Input Line */}
         <div className="flex items-center">
-          <span className="text-green-400 mr-2">user@rawand.dev:~$</span>
+          <span className={`${themeStyles.prompt} mr-2`}>user@rawand.dev:~$</span>
           <input
             ref={inputRef}
             type="text"
             value={currentInput}
             onChange={(e) => setCurrentInput(e.target.value)}
             onKeyDown={handleKeyDown}
-            className="flex-1 bg-transparent border-none outline-none text-gray-100 caret-green-400"
+            className={`flex-1 bg-transparent border-none outline-none ${themeStyles.output} caret-current`}
             autoComplete="off"
             spellCheck={false}
+            style={{ caretColor: "currentColor" }}
           />
-          <span className="animate-pulse text-green-400">█</span>
+          <span className={`animate-pulse ${themeStyles.cursor}`}>█</span>
         </div>
       </div>
     </div>
