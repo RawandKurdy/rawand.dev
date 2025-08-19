@@ -162,3 +162,18 @@ export const contactPageData = [
   },
 ]
 
+export const socialLinks = [
+  {
+    label: "GitHub",
+    href: personalInfo.links.github,
+  },
+  {
+    label: "LinkedIn",
+    href: personalInfo.links.linkedin,
+  },
+  {
+    label: "Resume/CV",
+    href: personalInfo.links.resume,
+  },
+]
+
