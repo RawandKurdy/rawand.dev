@@ -193,7 +193,7 @@ export const projects = [
     links: {
       website: "https://toferba.en.uptodown.com/android",
     },
-    image: "/kurdish-alphabet-app.png",
+    image: "",
     date: "2018-01-01",
   },
 ]

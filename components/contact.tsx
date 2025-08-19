@@ -19,10 +19,43 @@ export function Contact() {
     message: "",
   })
 
-  const handleSubmit = (e: React.FormEvent) => {
-    e.preventDefault()
-    // TODO: Implement
-    console.log("Form submitted:", formData)
+  const [status, setStatus] = useState(""); // success or error message
+
+  async function handleSubmit(e: React.FormEvent) {
+      e.preventDefault()
+      setStatus(""); // reset previous status
+
+      const formData = {
+        access_key: process.env.NEXT_PUBLIC_WEB3FORMS_API,
+        name: e.target.name.value,
+        email: e.target.email.value,
+        message: e.target.message.value,
+        subject: `New Submission from Web3Forms: (${e.target.subject.value})`
+      };
+
+      try {
+        const response = await fetch("https://api.web3forms.com/submit", {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json",
+            Accept: "application/json",
+          },
+          body: JSON.stringify(formData),
+        });
+
+        const result = await response.json();
+
+        if (result.success) {
+          setStatus("Message sent successfully!");
+          e.target.reset(); // clear form fields
+        } else {
+          setStatus("Failed to send message. Please try again.");
+          console.error(result);
+        }
+      } catch (error) {
+        setStatus("An error occurred. Please try again.");
+        console.error(error);
+      }
   }
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
@@ -203,6 +236,7 @@ export function Contact() {
                     Send Message
                   </Button>
                 </form>
+                {status && <p className="status-message">{status}</p>}
               </CardContent>
             </Card>
           </motion.div>
