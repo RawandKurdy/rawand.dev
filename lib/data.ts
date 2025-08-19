@@ -130,5 +130,17 @@ export const projects = [
     image: "",
     date: "2018-04-01",
   },
+  {
+    title: "Toferba - Kurdish Learning Platform",
+    description:
+      "Multiplatform application for learning the Kurdish alphabet and pronunciation using Flash technologies and interactive UI.",
+    technologies: ["ActionScript", "Flash", "XML", "Audio Processing"],
+    type: "Educational",
+    links: {
+      website: "https://toferba.en.uptodown.com/android",
+    },
+    image: "/kurdish-alphabet-app.png",
+    date: "2018-01-01",
+  },
 ]
 
