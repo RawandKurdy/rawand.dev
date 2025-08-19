@@ -72,6 +72,40 @@ export const experiencePageData = {
 }
 
 
+export const experiences = [
+  {
+    title: "Programmer Assistant",
+    company: "University of Human Development",
+    location: "On-Site",
+    period: "10/2019 - 9/2022",
+    type: "Full-time",
+    description:
+      "Taught and assisted in practical classes covering a range of subjects, including Networks, Object-Oriented Programming, Algorithms, and Cybersecurity.",
+    technologies: ["Java", "Android SDK", "Wordpress", "RDBMS", "Oracle DB", "Kali-Linux",
+      "OOP", "Data Structures & Advanced Data Structures", "PHP", "CSS/HTML"],
+  },
+  {
+    title: "Software Developer, IT Technician",
+    company: "Self Employed",
+    location: "Iraqi Kurdistan",
+    period: "06/2012 - 09/2019",
+    type: "Full-time",
+    description:
+      "Provided freelance application development services and offered technical support by troubleshooting computer and communication device issues.",
+    technologies: [],
+  },
+  {
+    title: "Software Engineer",
+    company: "KnowledgeFlow BVBA",
+    location: "Remote",
+    period: "02/2018 - 07/2018",
+    type: "Erasmus+ Blended AIM",
+    description:
+      "Contributed to chatbot development and API integration using Microsoft Bot Builder, Node.js, and related frameworks, with hands-on work in testing, debugging, and Microsoft LUIS. Collaborated as part of the Erasmus Blended AIM program (2018).",
+    technologies: ["JavaScript", "LUIS", "KF API", "Azure"],
+  },
+]
+
 export const projectsPageData = {
   title: "Featured Projects",
   shortText: "A selection of projects showcasing my expertise in various technologies and domains. For more details, please check my",
@@ -103,7 +137,7 @@ export const projects = [
       website: "https://www.knowledgeflow.io",
       demo: "https://ella.netlify.app",
     },
-    image: "/modern-chatbot-interface.png",
+    image: "",
     date: "2018-07-01",
   },
   {
