@@ -117,7 +117,20 @@ export function Projects() {
                     ))}
                   </div>
 
-                  <div className="flex items-center gap-3 pt-4">
+                  <div
+                    className="pt-4"
+                    style={{
+                      display: "grid",
+                      gridTemplateColumns: (() => {
+                        const buttonCount = Object.values(project.links).filter(Boolean).length
+                        if (buttonCount === 1) return "1fr"
+                        if (buttonCount === 2) return "1fr 1fr"
+                        if (buttonCount >= 3) return "1fr 1fr"
+                        return "1fr"
+                      })(),
+                      gap: "0.5rem",
+                    }}
+                  >
                     {project.links.code && (
                       <Button
                         variant="outline"
@@ -150,6 +163,9 @@ export function Projects() {
                         size="sm"
                         asChild
                         className="elegant-button bg-transparent border-primary/30 hover:border-primary/50 text-sm"
+                        style={{
+                          gridColumn: Object.values(project.links).filter(Boolean).length >= 3 ? "1 / -1" : "auto",
+                        }}
                       >
                         <a href={project.links.website} target="_blank" rel="noopener noreferrer">
                           <Globe className="h-4 w-4 mr-2" />
