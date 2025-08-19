@@ -3,6 +3,7 @@ import type { Metadata } from "next"
 import { DM_Sans, Playfair_Display } from "next/font/google"
 import "./globals.css"
 import { ThemeProvider } from "@/lib/theme-context"
+import { SpeedInsights } from "@vercel/speed-insights/next"
 
 const dmSans = DM_Sans({
   subsets: ["latin"],
@@ -46,6 +47,7 @@ export default function RootLayout({
     <html lang="en" className={`${dmSans.variable} ${playfair.variable} antialiased`}>
       <body>
         <ThemeProvider>{children}</ThemeProvider>
+        <SpeedInsights/>
       </body>
     </html>
   )
