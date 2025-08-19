@@ -9,7 +9,7 @@ import { Textarea } from "@/components/ui/textarea"
 import { Mail, MapPin, Phone, Send, Github, Linkedin, FileText } from "lucide-react"
 import { motion } from "framer-motion"
 import { useState } from "react"
-import { contactInfo, socialLinks, siteConfig } from "@/lib/data"
+import { contactPageData, socialLinks, siteConfig } from "@/lib/data"
 
 export function Contact() {
   const [formData, setFormData] = useState({
@@ -64,7 +64,7 @@ export function Contact() {
             <div>
               <h3 className="text-2xl font-semibold mb-6">Contact Information</h3>
               <div className="space-y-4">
-                {contactInfo.map((info, index) => {
+                {contactPageData.map((info, index) => {
                   const IconComponent = contactIcons[index]
                   return (
                     <motion.div

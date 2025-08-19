@@ -1,4 +1,4 @@
-import { personalInfo, aboutInfo, experiences, projects, contactInfo, socialLinks } from "@/lib/data"
+import { personalInfo, aboutInfo, experiences, projects, contactPageData, socialLinks } from "@/lib/data"
 
 export interface CommandResult {
   output: string[]
@@ -221,7 +221,7 @@ export class TerminalCommandParser {
           output: [
             "📞 Contact Information:",
             "",
-            ...contactInfo.map((info) => `  ${info.label}: ${info.value}`),
+            ...contactPageData.map((info) => `  ${info.label}: ${info.value}`),
             "",
             "🔗 Social Links:",
             ...socialLinks.map((link) => `  ${link.label}: ${link.href}`),
@@ -475,7 +475,7 @@ export class TerminalCommandParser {
                 }
               case "contact.txt":
                 return {
-                  output: contactInfo.map((info) => `${info.label}: ${info.value}`),
+                  output: contactPageData.map((info) => `${info.label}: ${info.value}`),
                   type: "success",
                 }
               case "readme.md":

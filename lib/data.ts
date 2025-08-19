@@ -144,3 +144,21 @@ export const projects = [
   },
 ]
 
+export const contactPageData = [
+  {
+    label: "Email",
+    value: personalInfo.email,
+    href: `mailto:${personalInfo.email}`,
+  },
+  {
+    label: "Location",
+    value: "Iraqi Kurdistan",
+    href: null,
+  },
+  {
+    label: "Available for",
+    value: "Remote Work & Freelance",
+    href: null,
+  },
+]
+
