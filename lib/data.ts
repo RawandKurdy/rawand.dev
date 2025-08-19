@@ -10,8 +10,8 @@ export const personalInfo = {
     "Passionate software engineer with over a decade of experience.",
   profileImage: "/profile.png",
   links: {
-    github: "https://github.com/rawandfarhad",
-    linkedin: "https://linkedin.com/in/rawandfarhad",
+    github: "https://github.com/RawandKurdy",
+    linkedin: "https://linkedin.com/in/RawandKurdy",
     resume: "/RawandFarhad_CV.pdf",
   },
 }
