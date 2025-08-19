@@ -74,6 +74,26 @@ export const experiencePageData = {
 
 export const experiences = [
   {
+    title: "*****",
+    company: "*****",
+    location: "Remote",
+    period: "06/2021 - Present",
+    type: "*****",
+    description: `- Built initial prototypes to validate concepts quickly, then transitioned them into production-ready solutions within a robust framework to ensure scalability and maintainability.
+
+    - Contributed to foundational components of the core system architecture, enabling higher-level functionality and extensibility across the platform.
+
+    - Engineered large-scale data migration workflows involving complex multi-format datasets, including the transformation and structured extraction of spreadsheet-based information.
+
+    - Developed custom pipelines and tools to automate conversion, ensure accuracy, and handle edge cases at scale.
+
+    - Built post-migration debugging and correction utilities to accelerate issue resolution.
+
+    - Designed, implemented and improved automation scripts to handle backups, and staging setup, improving reliability and reducing manual effort in development workflows.
+    ` ,
+    technologies: ["GraphQL", "Postgres", "Typescript", "NodeJS", "MikroORM", "Golang", "*****"],
+  },
+  {
     title: "Programmer Assistant",
     company: "University of Human Development",
     location: "On-Site",
