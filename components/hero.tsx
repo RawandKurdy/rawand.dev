@@ -6,6 +6,7 @@ import { ArrowDown, Github, Linkedin, ExternalLink } from "lucide-react"
 import { motion } from "framer-motion"
 import { personalInfo } from "@/lib/data"
 import { useTheme } from "@/lib/theme-context"
+import { Markdown } from "@/components/markdown"
 
 export function Hero() {
   const { theme } = useTheme()
@@ -135,14 +136,14 @@ export function Hero() {
             </motion.div>
           </div>
 
-          <motion.p
+          <motion.div
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 0.8 }}
-            className="text-xl sm:text-2xl text-muted-foreground max-w-3xl mx-auto leading-relaxed font-light"
+            className="text-xl sm:text-2xl max-w-3xl mx-auto leading-relaxed font-light"
           >
-            {personalInfo.description}
-          </motion.p>
+            <Markdown content={personalInfo.description} />
+          </motion.div>  
 
           <motion.div
             initial={{ opacity: 0, y: 20 }}

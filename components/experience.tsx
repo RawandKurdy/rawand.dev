@@ -5,6 +5,7 @@ import { Badge } from "@/components/ui/badge"
 import { Calendar, MapPin, Building } from "lucide-react"
 import { motion } from "framer-motion"
 import { experiences, experiencePageData } from "@/lib/data"
+import { Markdown } from "@/components/markdown"
 
 export function Experience() {
   return (
@@ -68,7 +69,7 @@ export function Experience() {
                           </div>
                         </div>
 
-                        <p className="text-muted-foreground">{experience.description}</p>
+                        <Markdown content={experience.description}/>
 
                         <div className="flex flex-wrap gap-2">
                           {experience.technologies.map((tech) => (

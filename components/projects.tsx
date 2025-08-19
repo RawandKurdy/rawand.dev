@@ -6,6 +6,7 @@ import { Button } from "@/components/ui/button"
 import { ExternalLink, Github, Globe } from "lucide-react"
 import { motion } from "framer-motion"
 import { projects, personalInfo, projectsPageData} from "@/lib/data"
+import { Markdown } from "@/components/markdown"
 
 export function Projects() {
   const getTypeColor = (type: string) => {
@@ -107,7 +108,7 @@ export function Projects() {
                 </CardHeader>
 
                 <CardContent className="space-y-6">
-                  <p className="text-muted-foreground leading-relaxed text-base">{project.description}</p>
+                  <Markdown content={project.description} className="text-base" />
 
                   <div className="flex flex-wrap gap-2">
                     {project.technologies.map((tech) => (

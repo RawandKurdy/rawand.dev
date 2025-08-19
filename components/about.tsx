@@ -6,6 +6,7 @@ import { Brain, Network, Code, Zap } from "lucide-react"
 import { motion } from "framer-motion"
 import { aboutInfo, personalInfo } from "@/lib/data"
 import { useTheme } from "@/lib/theme-context"
+import { Markdown } from "@/components/markdown"
 
 export function About() {
   const { theme } = useTheme()
@@ -33,7 +34,15 @@ export function About() {
           className="text-center mb-16"
         >
           <h2 className="text-3xl sm:text-4xl font-bold mb-4">About Me</h2>
-          <p className="text-lg text-muted-foreground max-w-3xl mx-auto">{aboutInfo.bio}</p>
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8 }}
+            viewport={{ once: true }}
+            className="text-lg max-w-3xl mx-auto"
+          >
+            <Markdown content={aboutInfo.bio} />
+          </motion.div>
         </motion.div>
 
         <div className="grid lg:grid-cols-2 gap-12 items-start">
@@ -64,7 +73,7 @@ export function About() {
                           </div>
                           <div>
                             <h4 className="font-semibold mb-2">{interest.title}</h4>
-                            <p className="text-muted-foreground text-sm">{interest.description}</p>
+                            <Markdown content={interest.description} className="text-sm" />
                           </div>
                         </div>
                       </CardContent>
