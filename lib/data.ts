@@ -106,5 +106,17 @@ export const projects = [
     image: "/modern-chatbot-interface.png",
     date: "2018-07-01",
   },
+  {
+    title: "eDoctor - Medical Management System",
+    description:
+      "Comprehensive all-in-one doctor management system for clinics and doctors. Handles patient records, appointments, and medical history.",
+    technologies: ["Java", "JavaFX", "PHP", "MySQL"],
+    type: "Web/Desktop App",
+    links: {
+      code: "https://github.com/RawandKurdy/eDoctor",
+    },
+    image: "",
+    date: "2018-06-01",
+  },
 ]
 
