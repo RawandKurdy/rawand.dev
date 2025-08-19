@@ -5,6 +5,6 @@
 
 ## Deployment
 
-Project is live at:
+Live at:
 
 **[https://www.rawand.dev](https://www.rawand.dev)**
