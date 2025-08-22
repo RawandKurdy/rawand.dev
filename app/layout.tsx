@@ -5,6 +5,7 @@ import "./globals.css"
 import { ThemeProvider } from "@/lib/theme-context"
 import { SpeedInsights } from "@vercel/speed-insights/next"
 import { Analytics } from "@vercel/analytics/next"
+import { AxiomWebVitals } from 'next-axiom';
 
 const dmSans = DM_Sans({
   subsets: ["latin"],
@@ -46,10 +47,11 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en" className={`${dmSans.variable} ${playfair.variable} antialiased`}>
+      <AxiomWebVitals/>
       <body>
         <ThemeProvider>{children}</ThemeProvider>
         <SpeedInsights/>
-        <Analytics />
+        <Analytics/>
       </body>
     </html>
   )
