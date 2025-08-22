@@ -30,7 +30,7 @@ export function Contact() {
         name: e.target.name.value,
         email: e.target.email.value,
         message: e.target.message.value,
-        subject: `New Submission from Web3Forms: (${e.target.subject.value})`
+        subject: `New Email from (${e.target.name.value}): (${e.target.subject.value})`
       };
 
       try {
